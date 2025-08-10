@@ -10,13 +10,139 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
   color: #8e6ccd;
 }
-
 h1.text-4xl {
-  background: linear-gradient(to right, #f8fc2a, #e7ed71);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #f8fc2a, #e7ed71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.mt-4.text-slate-600.text-lg {
+    color: #bfdff5 !important;
 }
 
-.mt-4.text-slate-600.text-lg {
-  color: #bfdff5 !important;
+
+/* Section with Background */
+#search {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Video Background 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}*/
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Main content */
+.content {
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input & Button */
+.input-group {
+  margin-bottom: 1rem;
+}
+input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #00b894;
+  color: rgb(148, 126, 227);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #019875;
+}
+
+/* Result section */
+#error {
+  color: #ff7675;
+  display: none;
+}
+#stockData {
+  margin-top: 1rem;
+  background-color: #6cda5b1a;
+  padding: 1rem;
+  border-radius: 10px;
+  display: none;
+}
+.py-16 {
+  color: #dfe7ee; /* your desired font color */
+}
+
+/* Or more specific: */
+ .py-16 h2 {
+  color: #cbd5f7; /* e.g., a blue */
+}
+
+.py-16 p {
+  color: white; /* e.g., slate gray */
+}
+.py-12{
+    border-radius: 1rem; /* rounded-2xl */
+  background: linear-gradient(
+    to bottom right,
+    #c0d8f9, /* blue-50 */
+    #b0d1fb, /* blue-100 */
+    #98c2f7  /* blue-200 */
+  );
+  padding: 1.5rem; /* p-6 */
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3),
+              0 4px 6px -2px rgba(59, 130, 246, 0.2); /* shadow-xl */
+  color: #1e293b; /* text-slate-900 */
+  border: 1px solid #bfdbfe; /* border-blue-100 */
+  transition: box-shadow 0.3s ease;
+}
+
+.hero{
+    
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
+  background-image:url("https://media.tenor.com/ILQPMy8OTbIAAAAC/stock-market-goes-up.gif");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  z-index: -1; /* Make sure it's behind all other content */
+  background-attachment: fixed; /*  Keeps image fixed on scroll */
 }
