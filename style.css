@@ -1,0 +1,22 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #8e6ccd;
+}
+
+h1.text-4xl {
+  background: linear-gradient(to right, #f8fc2a, #e7ed71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mt-4.text-slate-600.text-lg {
+  color: #bfdff5 !important;
+}
