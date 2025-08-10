@@ -44,12 +44,14 @@
         padding: 0;
         box-sizing: border-box;
       }
-      body, html {
+      body,
+      html {
         height: 100%;
         font-family: 'Segoe UI', Arial, sans-serif;
         color: #1e293b;
       }
-      input, button {
+      input,
+      button {
         font-family: inherit;
       }
 
@@ -70,10 +72,15 @@
       }
       .py-12 {
         border-radius: 1rem;
-        background: linear-gradient(to bottom right, #c0d8f9, #b0d1fb, #98c2f7);
+        background: linear-gradient(
+          to bottom right,
+          #c0d8f9,
+          #b0d1fb,
+          #98c2f7
+        );
         padding: 1.5rem;
         box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3),
-                    0 4px 6px -2px rgba(59, 130, 246, 0.2);
+          0 4px 6px -2px rgba(59, 130, 246, 0.2);
         color: #1e293b;
         border: 1px solid #bfdbfe;
         transition: box-shadow 0.3s ease;
@@ -117,16 +124,45 @@
   </head>
   <body class="bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
     <!-- Loading Indicator -->
-    <div id="loading" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
+    <div
+      id="loading"
+      class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+    >
+      <div
+        class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"
+      ></div>
     </div>
 
     <!-- Sticky top-right nav -->
-    <nav role="navigation" aria-label="Main navigation" class="fixed top-4 right-4 z-50 glass border border-slate-200 p-2 px-3 rounded-2xl shadow-md flex gap-2 items-center">
-      <a class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full" href="#search" aria-current="false">Search</a>
-      <a class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full" href="#overview" aria-current="false">Overview</a>
-      <a class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full" href="#chart" aria-current="false">Chart</a>
-      <a class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full" href="#about" aria-current="false">About</a>
+    <nav
+      role="navigation"
+      aria-label="Main navigation"
+      class="fixed top-4 right-4 z-50 glass border border-slate-200 p-2 px-3 rounded-2xl shadow-md flex gap-2 items-center"
+    >
+      <a
+        class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full"
+        href="#search"
+        aria-current="false"
+        >Search</a
+      >
+      <a
+        class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full"
+        href="#overview"
+        aria-current="false"
+        >Overview</a
+      >
+      <a
+        class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full"
+        href="#chart"
+        aria-current="false"
+        >Chart</a
+      >
+      <a
+        class="navlink text-slate-700 font-semibold hover:text-white hover:bg-teal-500 px-3 py-1 rounded-full"
+        href="#about"
+        aria-current="false"
+        >About</a
+      >
     </nav>
 
     <!-- Main container -->
@@ -134,34 +170,67 @@
       <!-- HERO / SEARCH -->
       <section id="search" class="min-h-[70vh] flex items-center">
         <div class="overlay"></div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+        <div
+          class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10"
+        >
           <div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">EquiTrack<span class="text-teal-500">.</span></h1>
-            <p class="mt-4 text-lg custom-paragraph">Simple, clean stock snapshot — learning is earning. Enter a ticker to get started.</p>
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-              <input id="symbolInput" class="px-4 py-3 rounded-lg shadow-sm border border-slate-200 w-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-teal-300" placeholder="e.g. AAPL, TSLA, MSFT" />
-              <button id="startBtn" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-teal-500 text-white font-semibold shadow hover:bg-teal-600">Track</button>
-              <button id="demoBtn" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-teal-500 text-white font-semibold shadow hover:bg-teal-600">Demo data</button>
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+              EquiTrack<span class="text-teal-500">.</span>
+            </h1>
+            <p class="mt-4 text-lg custom-paragraph">
+              Simple, clean stock snapshot — learning is earning. Enter a ticker to
+              get started.
+            </p>
+            <div
+              class="mt-8 flex flex-col sm:flex-row gap-3 items-start sm:items-center"
+            >
+              <input
+                id="symbolInput"
+                class="px-4 py-3 rounded-lg shadow-sm border border-slate-200 w-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-teal-300"
+                placeholder="e.g. AAPL, TSLA, MSFT, BRK.A"
+              />
+              <button
+                id="startBtn"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-teal-500 text-white font-semibold shadow hover:bg-teal-600"
+              >
+                Track
+              </button>
+              <button
+                id="demoBtn"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-teal-500 text-white font-semibold shadow hover:bg-teal-600"
+              >
+                Demo data
+              </button>
             </div>
             <div id="error" class="mt-4"></div>
             <div id="stockData" class="mt-4"></div>
-            <div class="mt-6 text-sm text-slate-300">Tip: Use the top-right nav to jump between sections.</div>
+            <div class="mt-6 text-sm text-slate-300">
+              Tip: Use the top-right nav to jump between sections.
+            </div>
           </div>
           <!-- Quick tile / compact snapshot -->
-          <div class="rounded-2xl bg-gradient-to-br from-sky-100 via-sky-200 to-sky-300 p-6 shadow-lg">
+          <div
+            class="rounded-2xl bg-gradient-to-br from-sky-100 via-sky-200 to-sky-300 p-6 shadow-lg"
+          >
             <div class="flex items-start justify-between">
               <div>
-                <div id="quickSymbol" class="text-slate-400 text-sm">No symbol</div>
+                <div id="quickSymbol" class="text-slate-400 text-sm">
+                  No symbol
+                </div>
                 <div id="quickPrice" class="text-3xl font-bold mt-1">—</div>
                 <div id="quickChange" class="text-sm mt-1 text-teal-600">—</div>
               </div>
               <div class="text-right">
                 <div class="text-xs text-slate-500">Exchange</div>
-                <div id="quickExchange" class="text-sm font-semibold mt-1">—</div>
+                <div id="quickExchange" class="text-sm font-semibold mt-1">
+                  —
+                </div>
                 <div id="quickTime" class="text-xs text-slate-400 mt-2">—</div>
               </div>
             </div>
-            <div class="mt-4 border-t pt-4 text-sm text-slate-600 grid grid-cols-2 gap-4">
+            <div
+              class="mt-4 border-t pt-4 text-sm text-slate-600 grid grid-cols-2 gap-4"
+            >
               <div>
                 <div class="text-xs text-slate-400">Day High</div>
                 <div id="quickHigh" class="font-medium">—</div>
@@ -186,64 +255,133 @@
       <!-- OVERVIEW / METRIC CARDS -->
       <section id="overview" class="py-16">
         <h2 class="text-4xl font-bold mb-4">Overview</h2>
-        <p class="text-sm mb-6">High-level metrics and quick insight. Click a card to refresh that metric.</p>
+        <p class="text-sm mb-6">
+          High-level metrics and quick insight. Click a card to refresh that
+          metric.
+        </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-sky-300 shadow hover:shadow-xl cursor-pointer" data-metric="price">
+          <div
+            class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-sky-300 shadow hover:shadow-xl cursor-pointer"
+            data-metric="price"
+          >
             <div class="text-base text-black">Price</div>
-            <div id="cardPrice" class="mt-2 text-2xl font-semibold text-black">—</div>
-            <div id="cardPriceChange" class="text-sm font-bold text-black mt-1">—</div>
+            <div id="cardPrice" class="mt-2 text-2xl font-semibold text-black">
+              —
+            </div>
+            <div id="cardPriceChange" class="text-sm font-bold text-black mt-1">
+              —
+            </div>
           </div>
-          <div class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-sky-300 shadow hover:shadow-xl cursor-pointer" data-metric="change">
+          <div
+            class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-sky-300 shadow hover:shadow-xl cursor-pointer"
+            data-metric="change"
+          >
             <div class="text-base text-black">Change %</div>
-            <div id="cardChange" class="mt-2 text-2xl font-semibold text-black">—</div>
+            <div id="cardChange" class="mt-2 text-2xl font-semibold text-black">
+              —
+            </div>
           </div>
-          <div class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-sky-300 shadow hover:shadow-xl cursor-pointer" data-metric="volume">
+          <div
+            class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-sky-300 shadow hover:shadow-xl cursor-pointer"
+            data-metric="volume"
+          >
             <div class="text-base text-black">Volume</div>
-            <div id="cardVolume" class="mt-2 text-2xl font-semibold text-black">—</div>
+            <div id="cardVolume" class="mt-2 text-2xl font-semibold text-black">
+              —
+            </div>
             <div class="text-xs text-slate-700 mt-1">Last trade</div>
           </div>
-          <div class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-blue-300 shadow hover:shadow-xl cursor-pointer" data-metric="marketcap">
+          <div
+            class="card enter-from-bottom p-5 rounded-xl bg-gradient-to-br from-white to-blue-300 shadow hover:shadow-xl cursor-pointer"
+            data-metric="marketcap"
+          >
             <div class="text-base text-black">Market Cap</div>
-            <div id="cardMarketCap" class="mt-2 text-2xl font-semibold text-black">—</div>
+            <div
+              id="cardMarketCap"
+              class="mt-2 text-2xl font-semibold text-black"
+            >
+              —
+            </div>
           </div>
         </div>
-        <div class="mt-8 text-sm text-slate-300">Click any card to simulate refresh (demo).</div>
+        <div class="mt-8 text-sm text-slate-300">
+          Click any card to simulate refresh (demo).
+        </div>
       </section>
 
       <!-- CHART -->
       <section id="chart" class="py-16">
         <div class="flex flex-col lg:flex-row gap-8">
-          <div class="flex-1 rounded-2xl bg-gradient-to-br from-sky-100 via-sky-200 to-sky-400 p-6 shadow-xl border border-sky-200 hover:shadow-2xl transition-all duration-300">
+          <div
+            class="flex-1 rounded-2xl bg-gradient-to-br from-sky-100 via-sky-200 to-sky-400 p-6 shadow-xl border border-sky-200 hover:shadow-2xl transition-all duration-300"
+          >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-black" id="chartHeader">Price Chart</h3>
+              <h3 class="text-lg font-semibold text-black" id="chartHeader">
+                Price Chart
+              </h3>
               <div class="flex gap-2">
-                <button class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700" data-range="1D">1D</button>
-                <button class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700" data-range="5D">5D</button>
-                <button class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700" data-range="1M">1M</button>
-                <button class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700" data-range="YTD">YTD</button>
+                <button
+                  class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700"
+                  data-range="1D"
+                >
+                  1D
+                </button>
+                <button
+                  class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700"
+                  data-range="5D"
+                >
+                  5D
+                </button>
+                <button
+                  class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700"
+                  data-range="1M"
+                >
+                  1M
+                </button>
+                <button
+                  class="rangeBtn px-3 py-1 text-sm rounded-lg border text-slate-700"
+                  data-range="YTD"
+                >
+                  YTD
+                </button>
               </div>
             </div>
             <div class="mt-4">
               <canvas id="priceChart" class="w-full"></canvas>
             </div>
           </div>
-          <aside class="w-full lg:w-80 rounded-2xl bg-gradient-to-br from-sky-100 via-sky-300 to-sky-500 p-6 shadow-xl flex flex-col gap-4 border border-sky-200 hover:shadow-2xl transition-all duration-300">
+          <aside
+            class="w-full lg:w-80 rounded-2xl bg-gradient-to-br from-sky-100 via-sky-300 to-sky-500 p-6 shadow-xl flex flex-col gap-4 border border-sky-200 hover:shadow-2xl transition-all duration-300"
+          >
             <div>
               <div class="text-base font-semibold text-blue-700">Today's High</div>
-              <div id="sideHigh" class="text-xl font-semibold text-blue-900">—</div>
+              <div id="sideHigh" class="text-xl font-semibold text-blue-900">
+                —
+              </div>
             </div>
             <div>
               <div class="text-base font-semibold text-blue-700">Today's Low</div>
-              <div id="sideLow" class="text-xl font-semibold text-blue-900">—</div>
+              <div id="sideLow" class="text-xl font-semibold text-blue-900">
+                —
+              </div>
             </div>
             <div>
               <div class="text-base font-semibold text-blue-700">Open</div>
-              <div id="sideOpen" class="text-lg font-semibold text-blue-900">—</div>
+              <div id="sideOpen" class="text-lg font-semibold text-blue-900">
+                —
+              </div>
             </div>
             <div class="mt-4">
-              <button id="refreshBtn" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Refresh</button>
+              <button
+                id="refreshBtn"
+                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+              >
+                Refresh
+              </button>
             </div>
-            <div class="text-sm text-blue-900 mt-auto">Last updated: <span id="lastUpdated">—</span></div>
+            <div class="text-sm text-blue-900 mt-auto">
+              Last updated: <span id="lastUpdated">—</span>
+            </div>
           </aside>
         </div>
       </section>
@@ -251,9 +389,12 @@
       <!-- ABOUT / FOOTER -->
       <section id="about" class="py-12">
         <div>
-          <strong>EquiTrack</strong> — a clean demo UI for tracking stock metrics and visualizing price movement.
+          <strong>EquiTrack</strong> — a clean demo UI for tracking stock metrics
+          and visualizing price movement.
           <div class="mt-2">
-            EquiTrack helps you quickly view real-time stock prices, daily stats, and price charts for your favorite companies—all in a modern, easy-to-use interface.
+            EquiTrack helps you quickly view real-time stock prices, daily stats,
+            and price charts for your favorite companies—all in a modern,
+            easy-to-use interface.
           </div>
         </div>
       </section>
@@ -373,13 +514,19 @@
 
       // Fetch stock data
       async function fetchStockData(symbol, range = "5D") {
+        console.log(`Fetching data for symbol: ${symbol}, range: ${range}`);
         $("#error").style.display = "none";
         $("#stockData").style.display = "none";
         $("#loading").classList.remove("hidden");
         try {
           const quoteUrl = `https://financialmodelingprep.com/api/v3/quote/${symbol}?apikey=${API_KEY}`;
+          console.log(`Quote URL: ${quoteUrl}`);
           const quoteRes = await fetch(quoteUrl);
+          if (!quoteRes.ok) {
+            throw new Error(`HTTP error! Status: ${quoteRes.status}`);
+          }
           const quoteData = await quoteRes.json();
+          console.log("Quote data:", quoteData);
 
           if (!quoteData || !quoteData[0]) {
             $("#error").textContent = "Invalid symbol or data not available.";
@@ -401,15 +548,23 @@
               timeseries = 30;
               break;
             case "YTD":
-              timeseries = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 1)) / (1000 * 60 * 60 * 24));
+              timeseries = Math.floor(
+                (new Date() - new Date(new Date().getFullYear(), 0, 1)) /
+                  (1000 * 60 * 60 * 24)
+              );
               break;
             default:
               timeseries = 5;
           }
 
           const histUrl = `https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}?serietype=line&timeseries=${timeseries}&apikey=${API_KEY}`;
+          console.log(`Historical URL: ${histUrl}`);
           const histRes = await fetch(histUrl);
+          if (!histRes.ok) {
+            throw new Error(`HTTP error! Status: ${histRes.status}`);
+          }
           const histData = await histRes.json();
+          console.log("Historical data:", histData);
 
           let chartLabels = [];
           let chartData = [];
@@ -424,71 +579,6 @@
           const obj = {
             symbol: q.symbol,
             exchange: q.exchange || "N/A",
-            price: q.price,
-            change: q.change,
-            changePct: q.changesPercentage,
-            high: q.dayHigh,
-            low: q.dayLow,
-            open: q.open,
-            volume: q.volume || "—",
-            pe: q.pe || "—",
-            marketCap: q.marketCap || "—",
-            series: {
-              labels: chartLabels,
-              data: chartData,
-            },
-          };
-
-          fillUI(obj);
-          $("#stockData").style.display = "block";
-        } catch (err) {
-          console.error(err);
-          $("#error").textContent = "Error fetching data.";
-          $("#error").style.display = "block";
-          clearUI();
-        } finally {
-          $("#loading").classList.add("hidden");
-        }
-      }
-
-      // Fill UI
-      function fillUI(obj) {
-        currentSymbol = obj.symbol;
-        quickSymbol.textContent = obj.symbol;
-        quickPrice.textContent = `$${obj.price}`;
-        quickChange.textContent = `${obj.change >= 0 ? "▲" : "▼"} ${obj.change} (${obj.changePct}%)`;
-        quickExchange.textContent = obj.exchange;
-        quickTime.textContent = new Date().toLocaleTimeString();
-        quickHigh.textContent = `$${obj.high}`;
-        quickLow.textContent = `$${obj.low}`;
-        quickVol.textContent = obj.volume;
-        quickPE.textContent = obj.pe;
-        cardPrice.textContent = `$${obj.price}`;
-        cardPriceChange.textContent = `${obj.change >= 0 ? "+" : ""}${obj.change} (${obj.changePct}%)`;
-        cardChange.textContent = `${obj.changePct}%`;
-        cardVolume.textContent = obj.volume;
-        cardMarketCap.textContent = obj.marketCap;
-        sideHigh.textContent = `$${obj.high}`;
-        sideLow.textContent = `$${obj.low}`;
-        sideOpen.textContent = `$${obj.open}`;
-        lastUpdated.textContent = new Date().toLocaleString();
-        chartHeader.textContent = `${obj.symbol} Price Chart`;
-
-        priceChart.data.labels = obj.series.labels;
-        priceChart.data.datasets[0].data = obj.series.data;
-        priceChart.update();
-      }
-
-      // Animate cards on load
-      window.addEventListener("load", () => {
-        document.querySelectorAll(".enter-from-bottom").forEach((el, i) => {
-          setTimeout(() => el.classList.add("entered"), 120 * i);
-        });
-        updateActiveNav();
-      });
-
-      // Sticky nav active highlight
-      const sections = [...document.querySelectorAll("main section")];
-      const navlinks = [...document.querySelectorAll("nav a")];
-      function updateActiveNav() {
-        const mid = window.i
+            price: q.price ? q.price.toFixed(2) : "—",
+            change: q.change ? q.change.toFixed(2) : "—",
+            changePct: q.changesPercentage ? q.changesPercentage.toFixed(2) : 
